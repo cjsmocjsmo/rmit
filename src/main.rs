@@ -1,15 +1,11 @@
 use std::fs;
-// use std::path::Path;
 use walkdir::WalkDir;
-
-
 
 fn main() {
     let img_path = "/media/pipi/0123-4567/Images".to_string();
     let _rm_unwanted = rm_unwanted_files(img_path.clone());
     let _rm_by_ext = rm_by_extension(img_path.clone());
 }
-
 
 pub fn rm_unwanted_files(apath: String) -> i32 {
     let to_remove_list = [
@@ -63,6 +59,7 @@ pub fn rm_unwanted_files(apath: String) -> i32 {
         "phone_270.gif",
         "phone270.gif",
         "phone276.jpg",
+        "P-009.tar",
     ];
 
     let mut idx = 0;
