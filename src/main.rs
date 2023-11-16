@@ -74,7 +74,7 @@ pub fn rm_unwanted_files(apath: String) -> i32 {
             let fname = e.path().to_string_lossy().to_string();
             // let tm = fname.split("/").collect::<Vec<&str>>();
             // let filename = tm.last().unwrap();
-            if fname.contains("System/Apps") {
+            if fname.contains("System") {
                 rmcount += 1;
                 println!("Removed: {}", &fname);
                 fs::remove_file(&fname).unwrap();
