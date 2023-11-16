@@ -93,6 +93,9 @@ pub fn rm_unwanted_files(apath: String) -> i32 {
             } else if fname.contains("pussy") {
                 rmcount += 1;
                 std::fs::remove_file(fname.clone()).unwrap();
+            } else if fname.contains("Posters2") {
+                rmcount += 1;
+                std::fs::remove_file(fname.clone()).unwrap();
             } else if to_remove_list.contains(&fname.as_str()) {
                 rmcount += 1;
                 std::fs::remove_file(fname.clone()).unwrap();
