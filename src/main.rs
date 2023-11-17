@@ -110,6 +110,7 @@ pub fn rm_unwanted_files(apath: String) -> i32 {
 }
 pub fn rm_by_extension(apath: String) -> i32 {
     let rm_list = [
+        "tif",
         "gif",
         "GIF",
         "mp3",
