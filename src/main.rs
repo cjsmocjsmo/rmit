@@ -5,7 +5,7 @@ fn main() {
     // let img_path = "/media/pipi/0123-4567/Images".to_string();
     // let _rm_unwanted = rm_unwanted_files(img_path.clone());
     // let _rm_by_ext = rm_by_extension(img_path.clone());
-    let apath = "/media/pipi/USBMOVIES/Master_HPics/".to_string();
+    let apath = "/media/pi/USBMOVIES/Master_HPics/".to_string();
     let mut count = 0;
     let mut removed = 0;
 
@@ -17,7 +17,7 @@ fn main() {
         if e.metadata().unwrap().is_file() {
             count += 1;
             let fname = e.path().to_string_lossy().to_string();
-            if fname.contains("Copy_of") {
+            if fname.contains("Copy_") {
                 //remove fname
                 removed += 1;
                 // let _rmove = std::fs::remove_file(fname.clone()).unwrap();
