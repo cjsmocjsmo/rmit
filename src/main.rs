@@ -24,6 +24,7 @@ fn main() {
             let fname = e.path().to_string_lossy().to_string();
             let ext_split = &fname.split(".").collect::<Vec<&str>>();
             let ext = ext_split.last().unwrap();
+            print!("{} ", ext);
             if rm_vec.contains(&ext) {
                 println!("Removed: {}", &fname);
                 std::fs::remove_file(fname.clone()).unwrap();
