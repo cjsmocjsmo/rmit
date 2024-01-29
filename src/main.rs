@@ -20,7 +20,7 @@ fn main() {
             if fname.contains("Copy_") {
                 //remove fname
                 removed += 1;
-                // let _rmove = std::fs::remove_file(fname.clone()).unwrap();
+                let _rmove = std::fs::remove_file(fname.clone()).unwrap();
             }
         }
     }
