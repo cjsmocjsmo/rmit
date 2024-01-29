@@ -34,7 +34,7 @@ fn main() {
             
         }
     }
-    remove_empty_dirs(Path::new(&apath.clone())).unwrap();
+    // remove_empty_dirs(Path::new(&apath.clone())).unwrap();
     println!("Start count: {}\nFiles removed: {}", count, removed.clone());
 }
 
