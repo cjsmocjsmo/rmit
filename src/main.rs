@@ -3,15 +3,12 @@ use walkdir::WalkDir;
 use std::fs;
 
 fn main() {
-    // let img_path = "/media/pipi/0123-4567/Images".to_string();
-    // let _rm_unwanted = rm_unwanted_files(img_path.clone());
-    // let _rm_by_ext = rm_by_extension(img_path.clone());
-    let apath = "/media/pipi/0123-4567/".to_string();
+    let apath = "/media/pipi/taz/PicCD1".to_string();
     let mut count = 0;
     let mut removed = 0;
-    let rm_vec = [
-        "gz", "zip", "ZIP", "txt", "ps1", "htm", "gif", "jar", "dat", "jpgblk", "key",
-        "tif", "MPG", "AVI", "DS_Store", "bz2", "3gp", "avi", "mp4", "pdf", "mp3", "nfo", "m3u",
+    let keep_vec = [
+        
+        "mpg", "MPG", "avi", "AVI", "mp4", "MP4", "mov", "MOV", "pdf", "PDF",
     ];
 
     for e in WalkDir::new(apath.clone())
@@ -25,7 +22,7 @@ fn main() {
             let ext_split = &fname.split(".").collect::<Vec<&str>>();
             let ext = ext_split.last().unwrap();
             print!("{} ", ext);
-            if rm_vec.contains(&ext) {
+            if !keep_vec.contains(&ext) {
                 println!("Removed: {}", &fname);
                 std::fs::remove_file(fname.clone()).unwrap();
                 removed += 1;
@@ -35,7 +32,7 @@ fn main() {
             
         }
     }
-    // remove_empty_dirs(Path::new(&apath.clone())).unwrap();
+    remove_empty_dirs(Path::new(&apath.clone())).unwrap();
     println!("Start count: {}\nFiles removed: {}", count, removed.clone());
 }
 
